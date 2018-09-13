@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main (void){
-    int n , soma , i ;
+    int n=0 , soma=0 , i=0 ;
     printf("Digite 'n': \n");
     scanf("%d" , &n);
     while (n>0){
@@ -9,6 +9,6 @@ int main (void){
         soma=(soma + (i*i));
         n=(n-1);
     }
-    printf("O somatório eh:%d\n", soma);
+    printf("O somatÃ³rio eh:%d\n", soma);
     return 0;
 }
