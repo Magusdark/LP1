@@ -20,6 +20,6 @@ int main (void){
         valor=compras[i];
         compra(conta, valor, outra_conta);
 	}
-	printf("Os saldos das duas contas s„o:%d \n%d \n", *conta , outra_conta);
+	printf("Os saldos das duas contas s√£o:%d \n%d \n", *conta , outra_conta);
 	return 0;
 }
