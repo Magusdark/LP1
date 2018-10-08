@@ -21,6 +21,6 @@ int main(){
 	int n[5],i;
 	preenche(n,5);
 	float x=media(n,5);
-	printf("A média entre os elementos do vetor é: %f\n", x);
+	printf("A média entre os elementos do vetor é: %.2f\n", x);
 	return 0;
 }
