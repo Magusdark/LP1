@@ -3,20 +3,20 @@
 
 struct Orb {
     char elem[30];
-    char don[30];
-    int age;
+    char estilo[30];
+    int nivel;
 };
 
 void preenche(struct Orb* orb){
-    printf("Escolha o elmento da orb, o nome do dono e o seu tempo de uso, respectivamente:\n");
+    printf("Escolha o elmento da orb, seu estilo e seu nivel, respectivamente:\n");
     scanf("%s", (*orb).elem);
-    scanf("%s", (*orb).don);
-    scanf("%d", (&(*orb).age));  
+    scanf("%s", (*orb).estilo);
+    scanf("%d", (&(*orb).nivel));  
 }
 
 int main(void){
     struct Orb o1;
     preenche(&o1);
-    printf("%s\n%s\n%d\n", o1.elem, o1.don, o1.age);
+    printf("\nSua Orb:\nElemento:%s\nEstilo:%s\nNivel:%d\n", o1.elem, o1.estilo, o1.nivel);
     return 0;
 }
