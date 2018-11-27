@@ -1,19 +1,19 @@
 #include <stdio.h>
 
 int main (){
-        int n1,n2,i;
+        int n1,n2,i,maior,menor;
         printf("Escolha dois numeros n1 e n2:\n");
         scanf("%d %d", &n1, &n2);
         if (n1>n2){
-            printf("numeros entre %d e %d\n", n2,n1);
-            for (i=(n2+1);i<n1;i++){
-                printf("%d ", i);
-            }
+               maior=n1;
+               menor=n2;
         }else{
-            printf("numeros entre %d e %d\n", n1,n2);
-            for(i=(n1+1);i<n2;i++){
+           maior=n2;
+           menor=n1;
+        }
+        printf("numeros entre %d e %d\n",menor,maior);
+            for (i=(menor+1);i<maior;i++){
                 printf("%d ", i);
             }
-        }
         return 0;
 }
