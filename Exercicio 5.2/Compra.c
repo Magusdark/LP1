@@ -2,7 +2,6 @@
 		
 void compra(int* conta, int valor){
 	*conta-=valor;
-	printf("Compra Efetuada na conta de maior saldo. \n");
 }
 
 int main (void){
