@@ -25,7 +25,7 @@ void max_primos(int n){
                 cont+=1;
             }
         }
-        printf("Os numeros primos entre 1 e %d sao\n", n);
+        printf("Os numeros primos entre 1 e %d sao:\n", n);
         for (i=0;i<cont;i++){
             printf("%d ",primos[i]);
         }
