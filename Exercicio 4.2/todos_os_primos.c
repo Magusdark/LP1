@@ -1,28 +1,39 @@
 #include <stdio.h>
 
+int eh_primo (int n) {
+	int cont=0 , C=0;
+	for (C=2;C<=n;C++) {
+		if (n%C==0) {
+			cont=(cont+1);
+		}
+	}
+	int f;
+	if (cont>=2){
+		f=0;
+	}else{
+		f=1;
+	}
+	return f;
+}
+
 void max_primos(int n){
-        int i, primos[n], q=0 , c, cont=0 ;
+        int i,x,primos[n],cont=0;
         for (i=2;i<n;i++){
-            for (c=2;c<=i;c++){
-                if (i%c==0){
-                    cont+=1;
-                }
-            }
-            if (cont<2){
-                primos[q]=i;
-                q+=1;
-            }
-            cont=0;
-        }
-        printf("Os numeros primos entre 1 e %d sao: \n", n);
-        for (i=0;i<q;i++){
-            printf("%d ", primos[i]);
+            x=eh_primo(i);
+            if (x==1){
+                primos[cont]=i;
+                cont+=1;
             }
         }
+        printf("Os numeros primos entre 1 e %d sao\n", n);
+        for (i=0;i<cont;i++){
+            printf("%d ",primos[i]);
+        }
+}
 int main (void){
     int N;
     printf("Escolha um numero: \n");
     scanf("%d", &N);
     max_primos(N);
     return 0;
-    }
+}
