@@ -43,46 +43,34 @@ void preenche2(struct Portador* p1){
 int main(void){
     struct Portador p1;
     preenche2(&p1);
-    FILE* f= fopen("/home/ime/personagem.txt", "wb");
+    FILE* f= fopen("C:/Users/Cliente/Documents/C/Arquivos/personagem.txt", "wb");
+    fwrite(&p1.classe,  sizeof(char), (strlen(p1.classe)+1), f);
+    fwrite(&p1.nome, sizeof(char), (strlen(p1.nome)+1), f);
+    fwrite(&p1.t, sizeof(int), 1, f);
+    fwrite(&p1.o.elem, sizeof(char), (strlen(p1.o.elem)+1), f);
+    fwrite(&p1.o.estilo, sizeof(char), (strlen(p1.o.estilo)+1), f);
+    fwrite(&p1.o.nivel, sizeof(int), 1, f);
     if (p1.t==1){
-        fwrite(&p1.classe,  sizeof(char), (strlen(p1.classe)+1), f);
-        fwrite(&p1.nome, sizeof(char), (strlen(p1.nome)+1), f);
-        fwrite(&p1.t, sizeof(int), 1, f);
         fwrite(&p1.id.jogador, sizeof(char), (strlen(p1.id.jogador)+1), f);
-        fwrite(&p1.o.elem, sizeof(char), (strlen(p1.o.elem)+1), f);
-        fwrite(&p1.o.estilo, sizeof(char), (strlen(p1.o.estilo)+1), f);
-        fwrite(&p1.o.nivel, sizeof(int), 1, f);
-        
     }else if(p1.t==2){
-        fwrite(&p1.classe,  sizeof(char), (strlen(p1.classe)+1), f);
-        fwrite(&p1.nome, sizeof(char), (strlen(p1.nome)+1), f);
-        fwrite(&p1.t, sizeof(int), 1, f);
-        fwrite(&p1.id.identificador, sizeof(double), 1, f);
-        fwrite(&p1.o.elem, sizeof(char), (strlen(p1.o.elem)+1), f);
-        fwrite(&p1.o.estilo, sizeof(char), (strlen(p1.o.estilo)+1), f);
-        fwrite(&p1.o.nivel, sizeof(int), 1, f);
+        fwrite(&p1.id.identificador, sizeof(double), 1, f);;
     }
     fclose(f);
-    FILE* g=fopen("/home/ime/personagem.txt", "rb");
+    FILE* g=fopen("C:/Users/Cliente/Documents/C/Arquivos/personagem.txt", "rb");
     struct Portador p2;
+    fread(&p2.classe,  sizeof(char), (strlen(p1.classe)+1), g);
+    fread(&p2.nome, sizeof(char), (strlen(p1.nome)+1), g);
+    fread(&p2.t, sizeof(int), 1, g);
+    fread(&p2.o.elem, sizeof(char), (strlen(p1.o.elem)+1), g);
+    fread(&p2.o.estilo, sizeof(char), (strlen(p1.o.estilo)+1), g);
+    fread(&p2.o.nivel, sizeof(int), 1, g);
     if (p1.t==1){
-    	fread(&p2.classe,  sizeof(char), (strlen(p1.classe)+1), g);
-        fread(&p2.nome, sizeof(char), (strlen(p1.nome)+1), g);
-        fread(&p2.t, sizeof(int), 1, g);
         fread(&p2.id.jogador, sizeof(char), (strlen(p1.id.jogador)+1), g);
-        fread(&p2.o.elem, sizeof(char), (strlen(p1.o.elem)+1), g);
-        fread(&p2.o.estilo, sizeof(char), (strlen(p1.o.estilo)+1), g);
-        fread(&p2.o.nivel, sizeof(int), 1, g);
-        printf("\nSeu nome:%s\nSeu personagem:\nClasse:%s\nNome:%s\n\nSua Orb:\nElemento:%s\nEstilo:%s\nNível:%d\n",p2.id.jogador, p2.classe, p2.nome, p2.o.elem, p2.o.estilo, p2.o.nivel);        
+        printf("\nSeu nome:%s\nSeu personagem:\nClasse:%s\nNome:%s\n\nSua Orb:\nElemento:%s\nEstilo:%s\nNível:%d\n",p2.id.jogador, p2.classe, p2.nome, p2.o.elem, p2.o.estilo, p2.o.nivel);
     }else if(p1.t==2){
-        fread(&p2.classe,  sizeof(char), (strlen(p1.classe)+1), g);
-        fread(&p2.nome, sizeof(char), (strlen(p1.nome)+1), g);
-        fread(&p2.t, sizeof(int), 1, g);
         fread(&p2.id.identificador, sizeof(double), 1, g);
-        fread(&p2.o.elem, sizeof(char), (strlen(p1.o.elem)+1), g);
-        fread(&p2.o.estilo, sizeof(char), (strlen(p1.o.estilo)+1), g);
-        fread(&p2.o.nivel, sizeof(int), 1, g);
         printf("\nSeu numero de sócio:%.0lf\nSeu personagem:\nClasse:%s\nNome:%s\n\nSua Orb:\nElemento:%s\nEstilo:%s\nNível:%d\n",p2.id.identificador, p2.classe, p2.nome, p2.o.elem, p2.o.estilo, p2.o.nivel);
     }
     return 0;
 }
+
