@@ -5,7 +5,8 @@
 int main(void){
         char nome[25];
         scanf("%s", nome);
-        FILE* f=fopen("/home/ime/arq.txt", "w");
+        FILE* f=fopen("C:/Users/Cliente/Documents/C/Arquivos/arq
+                      .txt", "w");
         int i,x;
         x=strlen(nome);
         for (i=0;i<x;i++){
@@ -14,3 +15,4 @@ int main(void){
         fclose(f);
         return 0;
 }
+
