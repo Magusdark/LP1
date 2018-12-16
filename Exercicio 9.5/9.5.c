@@ -13,7 +13,7 @@ void exibe(struct Caixa* caixa){
            caixa=caixa->prox;
     }
 }
-
+/*
 void insere(Caixa* inicio, int n){
     Caixa* novo;
     novo=(Caixa*) malloc(sizeof(Caixa));
@@ -30,7 +30,7 @@ void insere(Caixa* inicio, int n){
     }
 }
 
-
+*/
 int main(void){
     Caixa* cabeca,c1;
     cabeca=NULL;
