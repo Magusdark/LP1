@@ -18,6 +18,7 @@ int retira(struct Caixa* t1, int n){
     }
     t2->prox=t1->prox;
     t1->prox=NULL;
+    free(t1);
     return 1;
 }
 
@@ -71,8 +72,12 @@ int main(void){
     scanf("%d",&n);
     int x=contem(cabeca,n);
     if (x==2){
-        printf("Valor ecnontrado e removido\n");
+        Caixa* t3;
+        t3= (Caixa*) malloc(sizeof(Caixa));
+        t3=cabeca;
         cabeca=cabeca->prox;
+        free(t3);
+        printf("Valor ecnontrado e removido\n");
         exibe(cabeca);
     }else if (x==1){
         printf("Valor encontrado e removido\n");
