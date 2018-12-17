@@ -10,15 +10,14 @@ typedef struct Pessoa {
 int main(void){
     Pessoa v[100];
     int n;
-    scanf("%d", &n);
-    FILE* f= fopen("C:/Users/Cliente/Documents/C/Arquivos/ex8.bin", "rb");
+    FILE* f= fopen("/home/ime/ex8.bin", "rb");
     fread(&n, sizeof(int), 1, f);
     for (int i=0;i<n;i++){
-        fread(&v[i].idade, sizeof(int), 1, f);
-        fread(v[i].nome, sizeof(char), , f);
+        fread(&v[i],sizeof(struct Pessoa),1,f);
+        v[i].nome[25]='\0';
     }
     for (int j=0;j<n;j++){
-        printf("%d %s", v[j].idade, v[j].nome);
+        printf("%d %s\n", v[j].idade, v[j].nome);
     }
     fclose(f);
     return 0;
