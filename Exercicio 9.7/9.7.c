@@ -17,7 +17,6 @@ int retira(struct Caixa* t1, int n){
         t1=t1->prox;
     }
     t2->prox=t1->prox;
-    t1->prox=NULL;
     free(t1);
     return 1;
 }
@@ -45,7 +44,7 @@ void exibe(struct Caixa* caixa){
 }
 
 int main(void){
-    Caixa* cabeca,c1;
+    Caixa* cabeca;
     cabeca=NULL;
     int n;
     printf("Insira um valor para n:\n");
