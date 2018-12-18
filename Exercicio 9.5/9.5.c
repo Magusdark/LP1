@@ -32,7 +32,7 @@ void insere(Caixa* inicio, int n){
 
 */
 int main(void){
-    Caixa* cabeca,c1;
+    Caixa* cabeca;
     cabeca=NULL;
     int n;
     printf("Insira um valor para n:\n");
